@@ -38,8 +38,9 @@ bool palindrome(string a ){
  int main()
  {
      string a;
-     getline(cin,a);
-    
+     //getline(cin,a);
+     cout<<"enter first word\n";
+ cin>>a;
      
      if(palindrome(a)==1)
      cout<<"YES It is a palindrome word\n";
