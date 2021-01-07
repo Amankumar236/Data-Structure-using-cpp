@@ -12,13 +12,13 @@ bool palindrome(string a ){
  
  while(i<j)
  {
-     while(i<j && isalnum(a[i])==0)
+     while(i<j && isalnum(a[i])==0)   //to check is there is any space in between
      i++;
      while(i<j && isalnum(a[j])==0)
      j--;
      
      
-     if( toupper(a[i])!=toupper(a[j]) )
+     if( toupper(a[i])!=toupper(a[j]) )  ///convert lower case to upper
      {
          return false;
      }
