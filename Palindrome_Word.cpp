@@ -18,7 +18,7 @@ bool palindrome(string a ){
      j--;
      
      
-     if( toupper(a[i])!=toupper(a[j]) )  ///convert lower case to upper
+     if( toupper(a[i])!=toupper(a[j]) )  ///convert lower case to upper..can also use tolower 
      {
          return false;
      }
