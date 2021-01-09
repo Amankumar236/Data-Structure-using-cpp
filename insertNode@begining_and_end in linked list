@@ -1,0 +1,64 @@
+#include <iostream>
+using namespace std;
+
+struct Node{
+    
+    int data;
+    Node *link;
+};
+//creating head pointer and equating to NULL
+ Node *head=NULL;
+ 
+ //insert at begining of list
+void insertBeg(int d)
+{
+    Node *ptr=new Node();
+    ptr->data=d;
+    ptr->link=head;
+    head=ptr;   //if you will take ptr=head it will show only end node
+}
+//insert at end of list
+void insertEnd(int d)
+{
+    Node *ptr=new Node();
+    ptr->data=d;  //inserting data into newly created node
+    ptr->link=NULL; //and making link part of it null as it will be the end node 
+    
+    //if head is empty
+    if(head==NULL)  //WARNING: IF USED ONE = SIGN it can lead to segmentation dump 
+    head=ptr;
+    //else list is not empty
+    else
+    {
+        Node*temp=head;
+        while(temp->link!=NULL) //traversing the temp 
+        {
+            temp=temp->link;
+        }
+        temp->link=ptr;
+    } 
+}    
+    //fn to diplay linked list
+     void dispLink()
+     {
+         Node *temp=head;
+         
+         while(temp!=NULL)
+         {
+             cout<<temp->data<<" ";
+              temp=temp->link; 
+         }
+         cout<<"\n";
+     }
+    
+
+
+int main()
+{
+   insertBeg(1);
+    insertBeg(3);
+       insertBeg(7);
+   insertEnd(2);
+   dispLink();
+   return 0;
+}
